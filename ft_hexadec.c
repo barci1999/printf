@@ -6,11 +6,11 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 15:48:13 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/07 10:16:24 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/07 18:05:22 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
 #include "printf.h"
 
 static char	*assig_number(char *result, int len, size_t nb, size_t temp)
@@ -32,7 +32,7 @@ static char	*assig_number(char *result, int len, size_t nb, size_t temp)
 	return (result);
 }
 
-char	*ft_hexadec(size_t nb)
+void	*ft_hexadec(size_t nb)
 {
 	size_t	temp;
 	char	*result;
@@ -55,9 +55,9 @@ char	*ft_hexadec(size_t nb)
 	if (result == NULL)
 		return (NULL);
 	result[len] = '\0';
-	return (assig_number(result, len, nb, temp));
+	assig_number(result, len, nb, temp);
 }
-/*int main(void)
+int main(void)
 {
 	size_t number;
 	char *hex_result;
@@ -96,4 +96,4 @@ char	*ft_hexadec(size_t nb)
 	}
 
 	return (0);
-}*/
+}

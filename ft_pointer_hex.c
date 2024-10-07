@@ -6,13 +6,13 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 10:31:27 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/07 13:04:19 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/07 18:05:17 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
 
-char	*ft_pointer_hex(void *nb)
+void	*ft_pointer_hex(void *nb)
 {
 	char	*result;
 	size_t	temp;
@@ -36,5 +36,4 @@ char	*ft_pointer_hex(void *nb)
 		result[i++] = res_hexa[j++];
 	result[i] = '\0';
 	free(res_hexa);
-	return (result);
 }

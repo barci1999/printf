@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupperstr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 15:57:09 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/07 18:04:46 by pablalva         ###   ########.fr       */
+/*   Created: 2024/10/07 17:34:15 by pablalva          #+#    #+#             */
+/*   Updated: 2024/10/07 17:41:20 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-
-size_t	ft_strlen(const char *s)
+void *toupperstr(char * str)
 {
-	int	i;
-
+	int i;
 	i = 0;
-	while (s[i] != '\0')
+	while(str[i] == '\0')
+	{
+		if(str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
 		i++;
-	return (i);
+	}
 }
-/*int	main(void)
-{
-	const	char s[] = "cocacola";
-	printf("%d",ft_strlen(NULL));
-	//printf("%d",strlen(NULL));
-	return(0);
-}*/
