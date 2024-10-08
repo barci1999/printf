@@ -6,34 +6,25 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 10:31:27 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/07 18:05:17 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/08 14:01:37 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include "libft.h"
+#include "printf.h"
 
-void	*ft_pointer_hex(void *nb)
+void	ft_pointer_hex(int nb, char *base ,int flag)
 {
-	char	*result;
-	size_t	temp;
-	char	*res_hexa;
-	int j;
-	int		i;
-
-	i = 2;
-	j = 0;
-	temp = (size_t)nb;
-	res_hexa = ft_hexadec(temp);
-	result = malloc((ft_strlen(res_hexa) + 3) * sizeof(char));
-	if (result == NULL)
-	{
-		free(res_hexa);
-		return (NULL);
-	}
-	result[0] = '0';
-	result[1] = 'x';
-	while (res_hexa[j] != '\0')
-		result[i++] = res_hexa[j++];
-	result[i] = '\0';
-	free(res_hexa);
+	long	size;
+	long 	num;
+	
+	num = nb;
+	size = ft_strlen(base);
+	if(flag)
+		ft_putstr("0x");
+	if(num < 0)
+		num = num * -1;
+	if(num >= size)
+		ft_pointer_hex( nb / size ,base , 1);
+	write(1, &base[num % size], 1);
 }

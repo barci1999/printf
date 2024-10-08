@@ -6,94 +6,27 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 15:48:13 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/07 18:05:22 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:48:19 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include "libft.h"
 #include "printf.h"
 
-static char	*assig_number(char *result, int len, size_t nb, size_t temp)
+void	ft_hexadec(int nb,char *base)
 {
-	if (nb == 0)
+	long size;
+	long num;
+	num = nb;
+	size = ft_strlen(base);
+	if(num < 0)
 	{
-		result[0] = '0';
-		return (result);
+		write(1,"-",1);
+		num = num * -1;
 	}
-	while (nb > 0)
-	{
-		temp = nb % 16;
-		if (temp < 10)
-			result[--len] = '0' + temp;
-		else
-			result[--len] = 'a' + (temp - 10);
-		nb = nb / 16;
-	}
-	return (result);
+	if(num >= size)
+		ft_hexadec(num / size, base);
+	write(1,&base[num % size],1);
 }
 
-void	*ft_hexadec(size_t nb)
-{
-	size_t	temp;
-	char	*result;
-	int		len;
 
-	temp = nb;
-	len = 0;
-	if (nb == 0)
-		len = 1;
-	else
-	{
-		len = 0;
-		while (temp > 0)
-		{
-			temp = temp / 16;
-			len++;
-		}
-	}
-	result = malloc((len + 1) * sizeof(char));
-	if (result == NULL)
-		return (NULL);
-	result[len] = '\0';
-	assig_number(result, len, nb, temp);
-}
-int main(void)
-{
-	size_t number;
-	char *hex_result;
-
-	// Prueba con varios números
-	number = 0;
-	hex_result = ft_hexadec(number);
-	if (hex_result)
-	{
-		printf("Hexadecimal de %zu es: %s\n", number, hex_result);
-		free(hex_result); // Liberar memoria
-	}
-
-	number = 255;
-	hex_result = ft_hexadec(number);
-	if (hex_result)
-	{
-		printf("Hexadecimal de %zu es: %s\n", number, hex_result);
-		free(hex_result); // Liberar memoria
-	}
-
-	number = 4096;
-	hex_result = ft_hexadec(number);
-	if (hex_result)
-	{
-		printf("Hexadecimal de %zu es: %s\n", number, hex_result);
-		free(hex_result); // Liberar memoria
-	}
-
-	number = 123456789;
-	hex_result = ft_hexadec(number);
-	if (hex_result)
-	{
-		printf("Hexadecimal de %zu es: %s\n", number, hex_result);
-		free(hex_result); // Liberar memoria
-	}
-
-	return (0);
-}

@@ -6,11 +6,12 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 15:57:09 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/07 18:04:46 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:52:18 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include "libft.h"
+#include "printf.h"
 
 size_t	ft_strlen(const char *s)
 {

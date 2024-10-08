@@ -6,12 +6,13 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 12:52:14 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/07 18:04:51 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:54:22 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include "libft.h"
 #include "printf.h"
+#include <unistd.h>
 
 void	ft_putstr(const char *s)
 {

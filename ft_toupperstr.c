@@ -6,11 +6,13 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 17:34:15 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/07 17:41:20 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:53:31 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *toupperstr(char * str)
+#include "printf.h"
+
+void ft_toupperstr(char * str)
 {
 	int i;
 	i = 0;
