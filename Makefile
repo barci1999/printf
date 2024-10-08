@@ -6,7 +6,7 @@
 #    By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/04 11:35:59 by pablalva          #+#    #+#              #
-#    Updated: 2024/10/08 13:10:35 by pablalva         ###   ########.fr        #
+#    Updated: 2024/10/08 17:02:44 by pablalva         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = printf.a
 
 FLAG = -Wall -Werror -Wextra
 
-CFILES = ft_toupperstr.c ft_strlen.c ft_putstr.c ft_putnbrnu.c ft_putnbr.c ft_putchar.c\
+CFILES = ft_strlen.c ft_putstr.c ft_putnbrnu.c ft_putnbr.c ft_putchar.c\
 		ft_hexadec.c ft_pointer_hex.c 
 
 OBJS = $(CFILES:.c=.o)

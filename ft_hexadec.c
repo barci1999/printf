@@ -6,27 +6,28 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/06 15:48:13 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/08 13:48:19 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:36:04 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
 #include "printf.h"
 
-void	ft_hexadec(int nb,char *base)
+int	ft_hexadec(int nb, char *base)
 {
-	long size;
-	long num;
+	long	size;
+	long	num;
+	int count;
+	count = 0;
+
 	num = nb;
 	size = ft_strlen(base);
-	if(num < 0)
+	if (num < 0)
 	{
-		write(1,"-",1);
+		count = write(1, "-", 1);
 		num = num * -1;
 	}
-	if(num >= size)
+	if (num >= size)
 		ft_hexadec(num / size, base);
-	write(1,&base[num % size],1);
+	count += write(1, &base[num % size], 1);
+	return(count);
 }
-
-

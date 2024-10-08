@@ -6,28 +6,30 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 11:49:58 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/08 12:55:19 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/08 17:35:50 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
 #include "printf.h"
 
-void	ft_putnbr(int nb)
+int	ft_putnbr(int nb)
 {
+	int count;
+	count = 0;
 	if (nb == -2147483648)
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		count = write(1, "-2147483648", 11);
+		return (count);
 	}
 	if (nb < 0)
 	{
-		write(1, "-", 1);
+		count = write(1, "-", 1);
 		nb = -nb;
 	}
 	if (nb > 9)
 		ft_putnbr(nb / 10);
-	ft_putchar((nb % 10) + '0');
+	count += ft_putchar((nb % 10) + '0');
+	return(count);
 }
 /*int main (void)
 {
