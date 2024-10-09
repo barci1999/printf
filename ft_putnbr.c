@@ -6,15 +6,16 @@
 /*   By: pablalva <pablalva@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 11:49:58 by pablalva          #+#    #+#             */
-/*   Updated: 2024/10/08 17:35:50 by pablalva         ###   ########.fr       */
+/*   Updated: 2024/10/09 15:45:45 by pablalva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr(int nb)
 {
-	int count;
+	int	count;
+
 	count = 0;
 	if (nb == -2147483648)
 	{
@@ -27,9 +28,9 @@ int	ft_putnbr(int nb)
 		nb = -nb;
 	}
 	if (nb > 9)
-		ft_putnbr(nb / 10);
+		count += ft_putnbr(nb / 10);
 	count += ft_putchar((nb % 10) + '0');
-	return(count);
+	return (count);
 }
 /*int main (void)
 {
